@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 字符编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 是否开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<package name="struts2_default" extends="struts-default"
+		namespace="/">
+		<!-- 权限拦截器 -->
+		<interceptors>
+			<interceptor name="ps_Interceptor" class="ps.filter.StrutsInterceptors" />
+			<interceptor-stack name="ps_Stack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="ps_Interceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="ps_Interceptor" />
+		<global-results>
+			<result name="global.login" type="redirect">/login.htm</result>
+		</global-results>
+
+		<action name="home_*" method="{1}" class="homeAction">
+			<result name="index">/ui/Home.jsp</result>
+		</action>
+		<action name="account_*" method="{1}" class="accountAction">
+			<result name="setting">/ui/custom/account.jsp</result>
+		</action>
+		<action name="custom_*" method="{1}" class="customAction">
+			<result name="evaluation">/ui/custom/evaluation.jsp</result>
+			<result name="project">/ui/custom/project.jsp</result>
+			<result name="system">/ui/custom/system.jsp</result>
+		</action>
+		<action name="hr_*" method="{1}" class="employeeAction">
+			<result name="employee">/ui/hr/employee.jsp</result>
+			<result name="work">/ui/hr/work.jsp</result>
+		</action>
+		<action name="finance_*" method="{1}" class="financeAction">
+			<result name="advance">/ui/finance/advance.jsp</result>
+			<result name="salay">/ui/finance/salay.jsp</result>
+		</action>
+
+	</package>
+	
+	<package name="struts2_json" extends="json-default" namespace="/json">
+		<action name="account_login" method="login" class="accountAction">
+			<result name="success" type="json">
+				 <param name="includeProperties">isok</param>
+			</result>
+		</action>
+	</package>
+</struts>    

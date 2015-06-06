@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name="accountAction" class="ps.action.AccountAction">
+		<property name="accountService" ref="BaseAccountService"></property>
+	</bean>
+	<bean name="homeAction" class="ps.action.HomeAction">
+	</bean>
+	<bean name="customAction" class="ps.action.CustomAction"></bean>
+	<bean name="employeeAction" class="ps.action.EmployeeAction"></bean>
+	<bean name="financeAction" class="ps.action.FinanceAction"></bean>
+
+	<!-- DWR Action -->
+	<bean name="DWRHomeAction" class="ps.action.dwr.HomeAction"></bean>
+</beans>

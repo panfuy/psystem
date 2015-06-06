@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+body,html {
+	height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background: #EAEEF5;
+}
+
+a {
+	text-decoration: none;
+}
+
+#layout_main {
+	width: 99%;
+	margin: 0 auto;
+	margin-top: 4px;
+}
+
+.l-link {
+	display: block;
+	line-height: 22px;
+	height: 22px;
+	padding-left: 16px;
+	border: 1px solid white;
+	margin: 4px;
+}
+
+.l-link:link {
+	_color: #261CDC;
+	border: 0;
+}
+
+.l-link:hover {
+	background: #FFEEAC;
+	border: 1px solid #DB9F00;
+}
+
+.l-link:visited {
+	color: #4b4bcc;
+	border: 0;
+}
+
+.l-link:active {
+	color: #4b4bcc;
+	border: 0;
+}
+
+/* 顶部 */
+.l-topmenu {
+	margin: 0;
+	padding: 0;
+	height: 31px;
+	line-height: 31px;
+	background: url('../images/top.jpg') repeat-x bottom;
+	position: relative;
+	border-top: 1px solid #1D438B;
+}
+
+.l-topmenu-logo {
+	color: #E7E7E7;
+	padding-left: 35px;
+	line-height: 26px;
+	background: url('../images/topicon.png') no-repeat 10px 5px;
+}
+
+.l-topmenu-welcome {
+	position: absolute;
+	height: 24px;
+	line-height: 24px;
+	right: 10px;
+	top: 2px;
+	color: #070A0C;
+}
+
+.l-topmenu-welcome a {
+	color: #E7E7E7;
+}
+
+.l-link2 {
+	color: white;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.space {
+	color: #E7E7E7;
+}
+
+/* 顶部 */ /* 底部 */
+.div_bottom {
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+}
